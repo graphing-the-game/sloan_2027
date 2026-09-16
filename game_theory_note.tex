@@ -40,7 +40,7 @@ We therefore model corners as an indefinite horizon zero sum repeated game in wh
 \begin{aligned}
 S_t
 &=
-(H_t,\ \text{score}_t,\ \text{time}_t,\ F_t), \\[4pt]
+(H_t,\ M_t,\ F^{O}_t), \\[4pt]
 \sigma^O(\cdot \mid S_t)
 &\in \Delta(\mathcal{A}^O),
 \qquad
@@ -59,13 +59,18 @@ H_{t+1}
 (H_t,\ A_t^O,\ A_t^D,\ Y_t), \\[4pt]
 S_{t+1}
 &=
-(H_{t+1},\ \text{score}_{t+1},\ \text{time}_{t+1},\ F_{t+1}).
+(H_{t+1},\ M_{t+1},\ F^{O}_{t+1}).
 \end{aligned}
 \right.
 \]
 where
 \begin{itemize}
-    \item $S_t$ is the state of the game at corner $t$, composed of the relevant corner history, the game score, the game time, and the observed APC formation.
+    \item $S_t$ is the state of the game at corner $t$:
+    \begin{itemize}
+        \item $H_t$: corner history (past actions, setups, and outcomes; potentially weighted toward the current game---see below).
+        \item $M_t$: match context, comprising $\texttt{quarter}_t$ (match quarter), $\texttt{score\_state}_t$ (attacking team's relative score), $\texttt{corner\_number}_t$ (attacking team's corner sequence in the match), $\text{Elo}^O_t$ (attacking team pre-game Elo), and $\text{Elo}^D_t$ (defending team pre-game Elo).
+        \item $F^{O}_t$: offensive setup, comprising $\texttt{trap}_t$ (trapping option) and $\texttt{zone}_t$ (injection/shot zone). Observed by both teams before strategies are chosen.
+    \end{itemize}
 
     \item $\mathcal{A}^O$ and $\mathcal{A}^D$ are the sets of possible offensive and defensive actions, respectively.
 
@@ -88,7 +93,7 @@ where
 \vspace{0.4em}
 
 \textbf{Part 1: Common information is revealed.}  
-Once teams know that a penalty corner will occur, they observe the relevant game state, including the time remaining, score, APC initial setup, and other publicly available information.
+Once teams know that a penalty corner will occur, they observe the match context (quarter, score state, corner number, team Elo ratings) and the offensive setup (trap, zone).
 
 \vspace{0.6em}
 
@@ -223,14 +228,38 @@ Thus the Nash is $p = 1/2$, $q = 1/2$.
 When we have a larger matrix, we can eliminate any dominated strategies and then solve for a Nash equilibrium. The resulting equilibrium will specify the probability with which each team should play each strategy in its equilibrium support.
 
 
+\noindent \textbf{Weighted Estimation of Payoff Matrices:}
+
+To populate each cell of the payoff matrix, we estimate $P(\text{Goal} \mid A^O, A^D, S_t)$ from observed corners with matching action profiles and similar states. Rather than weighting all observations equally, we can weight corners from the game of interest more heavily than corners from other games. This reflects the idea that same-game observations---against the current opponent, in the current match context---are more informative about the relevant strategic environment.
+
+Define weights for each historical corner $\tau$:
+\[
+w_\tau =
+\begin{cases}
+\lambda & \text{if corner } \tau \text{ is from the current game,} \\
+1 & \text{otherwise,}
+\end{cases}
+\]
+where $\lambda > 1$. The weighted estimate of each payoff matrix entry is then
+\[
+\hat{P}_w(\text{Goal} \mid a^O, a^D, s)
+\;=\;
+\frac{
+\displaystyle\sum_{\tau} w_\tau \cdot \mathbf{1}\!\left(Y_\tau = \text{Goal},\; A_\tau^O = a^O,\; A_\tau^D = a^D\right)
+}{
+\displaystyle\sum_{\tau} w_\tau \cdot \mathbf{1}\!\left(A_\tau^O = a^O,\; A_\tau^D = a^D\right)
+}
+\]
+where the sums range over corners $\tau$ with states $S_\tau$ in the relevant conditioning set. When $\lambda = 1$, all games are weighted equally. As $\lambda$ increases, the estimates tilt toward same-game frequencies, making the equilibrium analysis more opponent-specific.
+
+This nests two extremes: using only league-wide data ($\lambda = 1$) and using only same-game data ($\lambda \to \infty$). The choice of $\lambda$ trades off bias (from pooling dissimilar opponents) against variance (from small same-game samples), and can be selected by cross-validation or treated as a tuning parameter.
+
 
 Open Questions:
 \begin{itemize}
-    \item How should history be populated? 
-    \begin{itemize}
-        \item Could be related to just this game, to past games/scouting, to team practices with certain corners and so on. 
-    \end{itemize}
-    \item Are there other variables we can include to make $S_t$ more realistic? Anything we can remove? How granular can we make it? 
+    \item How should the weighting parameter $\lambda$ be selected? Cross-validation, domain expertise, or sensitivity analysis?
+    \item Should weighting also account for recency across games (e.g., exponential decay), or is same-game vs.\ other-game sufficient?
+    \item How to handle cells with sparse data (few observations for a given action pair and state)?
 \end{itemize}
 
 
