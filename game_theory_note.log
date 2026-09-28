@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.2.2)  22 SEP 2026 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2026.2.2)  28 SEP 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -470,8 +470,7 @@ ftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
 \l__pdf_internal_box=\box63
-)
-No file game_theory_note.aux.
+) (game_theory_note.aux)
 \openout1 = `game_theory_note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -492,6 +491,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -553,6 +553,7 @@ cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 31.
+ (game_theory_note.out) (game_theory_note.out)
 \@outlinefile=\write3
 \openout3 = `game_theory_note.out'.
 
@@ -620,29 +621,42 @@ ion/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
 
 [3]
 
-[4] (game_theory_note.aux)
+[4] (results_table.tex
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 4.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 4.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 4.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 4.
+
+Overfull \hbox (7.34262pt too wide) in paragraph at lines 4--23
+ [][] 
+ []
+
+)
+
+[5] (game_theory_note.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 
 
-Package rerunfilecheck Warning: File `game_theory_note.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: Checksums for `game_theory_note.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `game_theory_note.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12843 strings out of 473899
- 199839 string characters out of 5726029
- 619950 words of memory out of 5000000
- 35512 multiletter control sequences out of 15000+600000
- 583590 words of font info for 91 fonts, out of 8000000 for 9000
+ 12895 strings out of 473899
+ 200850 string characters out of 5726029
+ 621424 words of memory out of 5000000
+ 35542 multiletter control sequences out of 15000+600000
+ 595630 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,80p,555b,511s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,80p,734b,511s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Marion\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ect
 t1095.pk><C:/Users/Marion/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmex10.pfb><C:/Users/Marion/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -654,9 +668,9 @@ Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/Marion/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Mari
 on/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/
 Marion/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on game_theory_note.pdf (4 pages, 117503 bytes).
+Output written on game_theory_note.pdf (5 pages, 122788 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
