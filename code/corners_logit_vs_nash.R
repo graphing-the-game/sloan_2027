@@ -11,7 +11,7 @@ library(lpSolve)
 # data prep
 # _________________________________________
 
-dat <- read_csv("corners.csv", na = c("", "NA")) %>%
+dat <- read_csv("corners.csv", na = c("", "NA")) %>% #this is what I called the csv, change it to your path!
   filter(observation_status == "complete", elo_match_status == "matched") %>%
   filter(!is.na(call), !is.na(defence), !is.na(is_goal)) %>%
   mutate(
