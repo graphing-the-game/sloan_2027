@@ -313,7 +313,7 @@ def_stat <- function(d, dev0) {
 dev0 <- deviance(glm(as.formula(paste("is_goal ~ call +", state_terms)), binomial, dat_u))
 obs  <- def_stat(dat_u, dev0)
 
-set.seed(42)
+set.seed(1)
 B <- 500
 perm <- t(replicate(B, {
   d <- dat_u %>%
