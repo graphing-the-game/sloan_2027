@@ -1,4 +1,4 @@
-#toy example
+#simple example: we run a 2x2 version to make sure things are correct before expanding. 
 #Marion Carr
 
 import numpy as np
@@ -78,7 +78,7 @@ print(f"  Defense BR(p*={p_star:.2f}) = {defense_best_response(p_star)}")
 print()
 
 
-#now do it as a linear program, this is what solve_game.py uses for the big matrix
+#now do it as a linear program, this is what solve_game_initial_smoothing.py uses for the big matrix
 m, n = U.shape  # m defense actions, n offense actions
 
 #offense lp

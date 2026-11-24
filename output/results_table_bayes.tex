@@ -1,0 +1,103 @@
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+ & Observed & Nash offense only & Nash defense only & Nash equilibrium \\
+\midrule
+Offense $\sigma^{O}$ &
+\begin{tabular}[t]{@{}l@{}} Sweep 27.0\% \\ Hit 26.3\% \\ Flick 21.3\% \\ Pass/stick 13.1\% \\ Pass/glove 8.5\% \\ BTI 3.2\% \\ OSI 0.6\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 69.7\% \\ Pass/glove 16.8\% \\ Hit 13.5\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 69.7\% \\ Pass/glove 16.8\% \\ Hit 13.5\% \end{tabular} \\
+\midrule
+Defense $\sigma^{D}$ &
+\begin{tabular}[t]{@{}l@{}} 3-1 92.6\% \\ 2-2 4.7\% \\ 3-1 reverse 2.4\% \\ Double runner 0.3\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 38.4\% \\ Double runner 35.5\% \\ 3-1 reverse 26.1\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 38.4\% \\ Double runner 35.5\% \\ 3-1 reverse 26.1\% \end{tabular} \\
+\midrule
+Goal Rate & 16.3\% & 16.3\% ($-0.0\%$) & 15.6\% ($-4.4\%$) & 16.3\% ($-0.2\%$) \\
+\bottomrule
+\end{tabular}
+\caption{Nash equilibrium results. Payoff matrix entries are posterior means under a Beta prior worth $k = 10$ corners, centred on the expert estimate (experts weighted: equal) for surveyed sparse cells and on the overall goal rate elsewhere. Defences are grouped by final formation: ``3-1'' pools ``3-1 to 3-1'' and ``2-2 to 3-1'' (standard and reverse), ``2-2'' pools every set ending in 2-2; ``3 man defense'' was not surveyed and is excluded. ``Nash offense only'' applies the offensive Nash mix against the observed defensive mix, and vice versa. Percentage changes are relative to observed goal rate.}
+\label{tab:results_bayes_equal_k10}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+ & Observed & Nash offense only & Nash defense only & Nash equilibrium \\
+\midrule
+Offense $\sigma^{O}$ &
+\begin{tabular}[t]{@{}l@{}} Sweep 27.0\% \\ Hit 26.3\% \\ Flick 21.3\% \\ Pass/stick 13.1\% \\ Pass/glove 8.5\% \\ BTI 3.2\% \\ OSI 0.6\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 67.5\% \\ Pass/glove 18.0\% \\ Hit 14.5\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 67.5\% \\ Pass/glove 18.0\% \\ Hit 14.5\% \end{tabular} \\
+\midrule
+Defense $\sigma^{D}$ &
+\begin{tabular}[t]{@{}l@{}} 3-1 92.6\% \\ 2-2 4.7\% \\ 3-1 reverse 2.4\% \\ Double runner 0.3\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 42.0\% \\ Double runner 31.1\% \\ 3-1 reverse 27.0\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 42.0\% \\ Double runner 31.1\% \\ 3-1 reverse 27.0\% \end{tabular} \\
+\midrule
+Goal Rate & 16.3\% & 16.3\% ($-0.4\%$) & 15.7\% ($-3.9\%$) & 16.2\% ($-0.6\%$) \\
+\bottomrule
+\end{tabular}
+\caption{Nash equilibrium results. Payoff matrix entries are posterior means under a Beta prior worth $k = 10$ corners, centred on the expert estimate (experts weighted: inv err) for surveyed sparse cells and on the overall goal rate elsewhere. Defences are grouped by final formation: ``3-1'' pools ``3-1 to 3-1'' and ``2-2 to 3-1'' (standard and reverse), ``2-2'' pools every set ending in 2-2; ``3 man defense'' was not surveyed and is excluded. ``Nash offense only'' applies the offensive Nash mix against the observed defensive mix, and vice versa. Percentage changes are relative to observed goal rate.}
+\label{tab:results_bayes_inv_err_k10}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+ & Observed & Nash offense only & Nash defense only & Nash equilibrium \\
+\midrule
+Offense $\sigma^{O}$ &
+\begin{tabular}[t]{@{}l@{}} Sweep 27.0\% \\ Hit 26.3\% \\ Flick 21.3\% \\ Pass/stick 13.1\% \\ Pass/glove 8.5\% \\ BTI 3.2\% \\ OSI 0.6\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 56.5\% \\ Hit 22.0\% \\ Pass/glove 21.5\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 56.5\% \\ Hit 22.0\% \\ Pass/glove 21.5\% \end{tabular} \\
+\midrule
+Defense $\sigma^{D}$ &
+\begin{tabular}[t]{@{}l@{}} 3-1 92.6\% \\ 2-2 4.7\% \\ 3-1 reverse 2.4\% \\ Double runner 0.3\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 41.6\% \\ Double runner 30.6\% \\ 3-1 reverse 27.8\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 41.6\% \\ Double runner 30.6\% \\ 3-1 reverse 27.8\% \end{tabular} \\
+\midrule
+Goal Rate & 16.3\% & 16.0\% ($-1.8\%$) & 15.5\% ($-5.2\%$) & 16.0\% ($-2.1\%$) \\
+\bottomrule
+\end{tabular}
+\caption{Nash equilibrium results. Payoff matrix entries are posterior means under a Beta prior worth $k = 10$ corners, centred on the expert estimate (experts weighted: inv sq err) for surveyed sparse cells and on the overall goal rate elsewhere. Defences are grouped by final formation: ``3-1'' pools ``3-1 to 3-1'' and ``2-2 to 3-1'' (standard and reverse), ``2-2'' pools every set ending in 2-2; ``3 man defense'' was not surveyed and is excluded. ``Nash offense only'' applies the offensive Nash mix against the observed defensive mix, and vice versa. Percentage changes are relative to observed goal rate.}
+\label{tab:results_bayes_inv_sq_err_k10}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+ & Observed & Nash offense only & Nash defense only & Nash equilibrium \\
+\midrule
+Offense $\sigma^{O}$ &
+\begin{tabular}[t]{@{}l@{}} Sweep 27.0\% \\ Hit 26.3\% \\ Flick 21.3\% \\ Pass/stick 13.1\% \\ Pass/glove 8.5\% \\ BTI 3.2\% \\ OSI 0.6\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 62.9\% \\ Pass/glove 19.1\% \\ Hit 18.0\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} Sweep 62.9\% \\ Pass/glove 19.1\% \\ Hit 18.0\% \end{tabular} \\
+\midrule
+Defense $\sigma^{D}$ &
+\begin{tabular}[t]{@{}l@{}} 3-1 92.6\% \\ 2-2 4.7\% \\ 3-1 reverse 2.4\% \\ Double runner 0.3\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} (unchanged) \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 37.5\% \\ Double runner 35.1\% \\ 3-1 reverse 27.4\% \end{tabular} &
+\begin{tabular}[t]{@{}l@{}} 3-1 37.5\% \\ Double runner 35.1\% \\ 3-1 reverse 27.4\% \end{tabular} \\
+\midrule
+Goal Rate & 16.3\% & 16.2\% ($-0.9\%$) & 15.5\% ($-5.3\%$) & 16.1\% ($-1.2\%$) \\
+\bottomrule
+\end{tabular}
+\caption{Nash equilibrium results. Payoff matrix entries are posterior means under a Beta prior worth $k = 10$ corners, centred on the expert estimate (experts weighted: manual) for surveyed sparse cells and on the overall goal rate elsewhere. Defences are grouped by final formation: ``3-1'' pools ``3-1 to 3-1'' and ``2-2 to 3-1'' (standard and reverse), ``2-2'' pools every set ending in 2-2; ``3 man defense'' was not surveyed and is excluded. ``Nash offense only'' applies the offensive Nash mix against the observed defensive mix, and vice versa. Percentage changes are relative to observed goal rate.}
+\label{tab:results_bayes_manual_k10}
+\end{table}
