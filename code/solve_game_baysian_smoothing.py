@@ -5,8 +5,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import linprog
 
-#the expert priors are on the final formation cells, so we use that grouping here
-from clean_data import DATA, OUTPUT, FINAL_DEFS as DEFS
+from clean_data import DATA, OUTPUT, DEFS
 
 #k is how many corners the expert prior is worth
 #k = 20 matches the sparse cutoff, so a cell with 20 corners weights the data and the experts equally
@@ -142,7 +141,7 @@ def make_table(goals, counts, m, calls, obs_off, obs_def, k):
         r"(experts weighted by inverse mean error on two check questions) for surveyed sparse "
         r"cells and on the overall goal rate elsewhere. Defences are grouped by final formation: ``3-1'' pools "
         r"``3-1 to 3-1'' and ``2-2 to 3-1'' (standard and reverse), ``2-2'' pools every set ending "
-        r"in 2-2; ``3 man defense'' was not surveyed and is excluded. ``Nash offense only'' applies "
+        r"in 2-2; ``3 man defense'' is excluded. ``Nash offense only'' applies "
         r"the offensive Nash mix against the observed defensive mix, and vice versa. Percentage "
         r"changes are relative to observed goal rate.}",
         f"\\label{{tab:results_bayes_k{k}}}",
@@ -154,18 +153,16 @@ def make_table(goals, counts, m, calls, obs_off, obs_def, k):
 if __name__ == '__main__':
     df = pd.read_excel(DATA / 'corners_cleaned.xlsx')
 
-    #3 man defense wasnt on the survey so it has no final formation group
-    df = df[df['def_final'].notna()]
     calls = sorted(df['call'].unique())
 
     #goals and corners for each (defence, call)
-    goals = pd.crosstab(df['def_final'], df['call'], values=df['is_goal'], aggfunc='sum')
+    goals = pd.crosstab(df['def_group'], df['call'], values=df['is_goal'], aggfunc='sum')
     goals = goals.reindex(index=DEFS, columns=calls).fillna(0).values
-    counts = pd.crosstab(df['def_final'], df['call']).reindex(index=DEFS, columns=calls, fill_value=0).values
+    counts = pd.crosstab(df['def_group'], df['call']).reindex(index=DEFS, columns=calls, fill_value=0).values
 
     #observed mixes
     obs_off = df['call'].value_counts(normalize=True).reindex(calls, fill_value=0).values
-    obs_def = df['def_final'].value_counts(normalize=True).reindex(DEFS, fill_value=0).values
+    obs_def = df['def_group'].value_counts(normalize=True).reindex(DEFS, fill_value=0).values
 
     answers = load_survey(calls)
     print(f"expert weights: {np.round(expert_weights(goals, counts, answers, calls), 3)}")

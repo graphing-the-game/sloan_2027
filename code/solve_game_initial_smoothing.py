@@ -94,10 +94,10 @@ def make_table(goals, counts, calls, obs_off, obs_def, alpha):
         r"\end{tabular}",
         r"\caption{Nash equilibrium results. Payoff matrix entries smoothed via Laplace prior "
         f"($\\alpha = {alpha}$). "
-        r"Defence categories are coarsened: ``3-1 to 2-2'' and ``2-2 to 2-2'' pool low and high "
-        r"variants; ``2-2 to 3-1'' pools standard and reverse. ``Nash offense only'' applies the "
-        r"offensive Nash mix against the observed defensive mix, and vice versa. Percentage "
-        r"changes are relative to observed goal rate.}",
+        r"Defences are grouped by final formation: ``3-1'' pools ``3-1 to 3-1'' and ``2-2 to 3-1'' "
+        r"(standard and reverse), ``2-2'' pools every set ending in 2-2; ``3 man defense'' is "
+        r"excluded. ``Nash offense only'' applies the offensive Nash mix against the observed "
+        r"defensive mix, and vice versa. Percentage changes are relative to observed goal rate.}",
         f"\\label{{tab:results_alpha{str(alpha).replace('.', '')}}}",
         r"\end{table}",
         "",

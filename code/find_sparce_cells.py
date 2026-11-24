@@ -2,7 +2,7 @@
 #Marion Carr
 
 import pandas as pd
-from clean_data import DATA, OUTPUT, FINAL_DEFS
+from clean_data import DATA, OUTPUT, DEFS
 
 #a cell is sparse if it has fewer corners than this
 MIN_N = 20
@@ -11,13 +11,12 @@ MIN_N = 20
 if __name__ == '__main__':
     df = pd.read_excel(DATA / 'corners_cleaned.xlsx')
 
-    sub = df[df['def_final'].notna()]
-    calls = sorted(sub['call'].unique())
+    calls = sorted(df['call'].unique())
 
     #corners and goals for each (defence, call)
-    counts = pd.crosstab(sub['def_final'], sub['call']).reindex(index=FINAL_DEFS, columns=calls, fill_value=0)
-    goals = pd.crosstab(sub['def_final'], sub['call'], values=sub['is_goal'], aggfunc='sum')
-    goals = goals.reindex(index=FINAL_DEFS, columns=calls).fillna(0).astype(int)
+    counts = pd.crosstab(df['def_group'], df['call']).reindex(index=DEFS, columns=calls, fill_value=0)
+    goals = pd.crosstab(df['def_group'], df['call'], values=df['is_goal'], aggfunc='sum')
+    goals = goals.reindex(index=DEFS, columns=calls).fillna(0).astype(int)
 
     print('corners per cell:')
     print(counts.to_string())
